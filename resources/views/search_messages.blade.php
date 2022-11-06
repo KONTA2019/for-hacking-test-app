@@ -11,7 +11,7 @@
             <input type="text" name="message">
         </div>
         <div>
-            閲覧したい値を選択してください
+            閲覧したい値を選択してください（選択肢がない場合は検索が実行されません）
             <div><input type="checkbox" name='param1' value="u.id">ユーザーID</div>
             <div><input type="checkbox" name='param2' value="u.name">ユーザー名</div>
             <div><input type="checkbox" name='param3' value="m.body">メッセージ</div>

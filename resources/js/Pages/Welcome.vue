@@ -30,6 +30,9 @@ const logout = () => {
             <Link :href="route('chat')" class="text-base text-gray-700 dark:text-gray-500 underline pl-10">チャット（XSSの練習）をする</Link>
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex underline "><a href="/search_messages" >検索（SQLインジェクションの練習）をする</a></div>
             <form method="POST" @submit.prevent="logout" class="pl-6"><ResponsiveNavLink as="button">Log Outをする</ResponsiveNavLink></form>
+            <div>※注意:このサイトで起きたトラブルに関して作者は一切の責任を負いかねます。</div>
+            <div class="pl-10">特にアカウントを登録する際は他人に閲覧される前提になるので、使い捨てのパスワードを登録してください。</div>
+            <div class="pl-10">もし興味があるけど不安という方は<a>こちらのブログ</a>で内容だけご確認ください。</div>
         </div>
         <div v-else>
                 <Link :href="route('chat')" class="text-base text-gray-700 dark:text-gray-500 underline pl-10">Log inしないでチャット（ハッキングの練習）をする</Link>

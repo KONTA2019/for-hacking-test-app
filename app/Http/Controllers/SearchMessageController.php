@@ -15,7 +15,7 @@ class SearchMessageController extends Controller
     public function index(Request $request)
     {
 
-        if ($request->has('param1') || $request->has('param2') || $request->has('param3') || $request->has('message')) {
+        if ($request->has('param1') || $request->has('param2') || $request->has('param3')) {
             if ($request->has('param3')) {
                 $sql = 'select ' . $request->param3;
             }
