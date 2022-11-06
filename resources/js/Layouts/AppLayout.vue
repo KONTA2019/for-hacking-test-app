@@ -58,6 +58,11 @@ const logout = () => {
                                     Chat画面
                                 </NavLink>
                             </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex pt-5">
+                                <a href="/search_messages" >
+                                    検索画面
+                                </a>
+                            </div>
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">

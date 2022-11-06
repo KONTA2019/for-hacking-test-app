@@ -15,20 +15,21 @@ class ChatController extends Controller
     // 新着順にメッセージ一覧を取得
     public function index()
     {
-        $messages = Message::query()
-            ->with([
-                'user',
-            ])
-            ->latest()
-            ->paginate(5);
-
-        // Lazily
+        // 以下ではログイン情報をフロントで使えるように処理している
         Inertia::share(
             'user',
             fn (Request $request) => $request->user()
                 ? $request->user()->only('id', 'name', 'email')
                 : null
         );
+
+        // メッセージを一覧表示するために取得
+        $messages = Message::query()
+            ->with([
+                'user',
+            ])
+            ->latest()
+            ->paginate(5);
 
         return Inertia::render(
             'Chat',

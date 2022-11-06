@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\SearchMessageController;
 
 
 /*
@@ -38,3 +39,5 @@ Route::middleware([
 
 Route::get('/chat', [ChatController::class, 'index'])->name('chat');
 Route::post('/chat', [ChatController::class, 'create'])->name('crerate_message');
+
+Route::get('/search_messages', [SearchMessageController::class, 'index'])->name('search_messages');

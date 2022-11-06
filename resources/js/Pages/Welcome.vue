@@ -27,11 +27,13 @@ const logout = () => {
             </template>
         </div>
         <div v-if="$page.props.user">
-            <Link :href="route('chat')" class="text-sm text-gray-700 dark:text-gray-500 underline">チャット（ハッキングの練習）をする</Link>
-            <form method="POST" @submit.prevent="logout"><ResponsiveNavLink as="button">Log Outをする</ResponsiveNavLink></form>
+            <Link :href="route('chat')" class="text-base text-gray-700 dark:text-gray-500 underline pl-10">チャット（XSSの練習）をする</Link>
+            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex underline "><a href="/search_messages" >検索（SQLインジェクションの練習）をする</a></div>
+            <form method="POST" @submit.prevent="logout" class="pl-6"><ResponsiveNavLink as="button">Log Outをする</ResponsiveNavLink></form>
         </div>
         <div v-else>
-                <Link :href="route('chat')" class="text-sm text-gray-700 dark:text-gray-500 underline">Log inしないでチャット（ハッキングの練習）をする</Link>
+                <Link :href="route('chat')" class="text-base text-gray-700 dark:text-gray-500 underline pl-10">Log inしないでチャット（ハッキングの練習）をする</Link>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex underline"><a href="/search_messages" >Log inしないでチャット検索（SQLインジェクションの練習）をする</a></div>
         </div>
     </div>
 </template>
