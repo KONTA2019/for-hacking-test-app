@@ -19,18 +19,21 @@ class ChatController extends Controller
             ->with([
                 'user',
             ])
-            // ->orderBy('id', 'desc')
             ->latest()
             ->paginate(5);
+
+        // Lazily
+        Inertia::share(
+            'user',
+            fn (Request $request) => $request->user()
+                ? $request->user()->only('id', 'name', 'email')
+                : null
+        );
 
         return Inertia::render(
             'Chat',
             [
                 'messages' => $messages->items(),
-                // 'pager' => [
-                //     'page' => $messages->currentPage(),
-                //     'lastPage' => $messages->lastPage(),
-                // ],
                 'pager' => $messages,
             ]
         );

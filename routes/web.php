@@ -24,7 +24,7 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('top');
 
 Route::middleware([
     'auth:sanctum',
@@ -36,5 +36,5 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/chat', [ChatController::class, 'index']);
+Route::get('/chat', [ChatController::class, 'index'])->name('chat');
 Route::post('/chat', [ChatController::class, 'create'])->name('crerate_message');
